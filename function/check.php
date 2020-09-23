@@ -9,7 +9,7 @@ $data = file_get_contents($link_check);
 
 if ($data == false) {
 	$tgid = '1315514566';
-	file_get_contents('https://api.telegram.org/bot1357193746:AAGLyKn9k16mGR3RVYlonFPBTWmacoot10M/sendMessage?chat_id='.$tgid.'&text=App -'.$app_name.'  link:'.$link_check);
+	file_get_contents('https://api.telegram.org/bot/sendMessage?chat_id='.$tgid.'&text=App -'.$app_name.'  link:'.$link_check);
 	mysqli_query($connection, "UPDATE `android_app` SET `active` = '$active' WHERE `id` =" . (int) $app['id'] );
 }
 }
